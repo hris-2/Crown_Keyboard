@@ -9,9 +9,15 @@ It uses a Nice!Nano v2 so it has wireless and wired capability.
 Along with the Nice!Nano it has Nice!View for the display.  
 The keyboard will include a reset button and a battery slider too.  
 
+## Which Ergogen
+I have been using https://ergogen.ceoloide.com the unoffical web version.  
+Because it includes ability to add custom footprints there is no need for downloading it.  
+For this reason all the inputs and outputs in the Ergogen folder aent sorted like they ould be on the local version
+I would recommened this to people who are going for smipler designs.
+
 ## Unusual Elements
 Unlike most people I used outlines and combos for the mounting points intead of footprints in pcbs.  
 I did this so i could visually see them in ergogen to stop the amount of times i had to switch between Ergogen and KiCad.  
-It also has stilts for the pcb to sit on so i have room for the battery and maybe have foam or something to provide a bit more support  
+It also has stilts for the pcb to sit on so i have room for the battery and maybe have foam or something to provide a bit more support 
 
-#THIS IS NOT FINISHED DO NOT USE YET PLEASE
+# THIS IS NOT FINISHED DO NOT USE YET PLEASE
