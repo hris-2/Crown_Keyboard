@@ -1,4 +1,4 @@
-# LEGEND KEYBOARD
+# CROWN KEYBOARD
 A simple 6 by 5 split keyboard with 3 thumb keys and a display.  
 It is planned to be made through Ergogen, KiCad and ZMK.  
 This not complete yet or fully tested so please do not use yet.
@@ -13,7 +13,7 @@ The keyboard will include a reset button and a battery slider too.
 I have been using https://ergogen.ceoloide.com the unoffical web version.  
 Because it includes ability to add custom footprints there is no need for downloading it.  
 For this reason all the inputs and outputs in the Ergogen folder aent sorted like they ould be on the local version
-I would recommened this to people who are going for smipler designs.
+I would recommened this to people who are going for simpler designs.
 
 ## Unusual Elements
 Unlike most people I used outlines and combos for the mounting points intead of footprints in pcbs.  
