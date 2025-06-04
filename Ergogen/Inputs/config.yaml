@@ -57,7 +57,7 @@ points:
       columns:
         in:
           key:
-            name: thumb_in 
+            name: matrix_thumb_in 
             column_net: col_3
             row_net: thumb_1
         mid:
@@ -65,7 +65,7 @@ points:
             spread: U
             splay: -15
             origin: [-0.5U, -0.5U]
-            name: thumb_mid
+            name: matrix_thumb_mid
             column_net: col_2
             row_net: thumb_1
         out:
@@ -75,7 +75,7 @@ points:
             origin: [-0.5U, -0.5U]
             column_net: col_1
             row_net: thumb_1         
-            name: thumb_out
+            name: matrix_thumb_out
   mirror: &mirror
     ref: matrix_inner_num
     distance: 83
@@ -91,77 +91,11 @@ outlines:
       size: [kx-0.5,ky-0.5]
   left_keys:
     - what: rectangle
-      where: 
-        - matrix_outer_control
-        - matrix_pinky_control
-        - matrix_ring_control
-        - matrix_middle_control
-        - matrix_index_control
-        - matrix_inner_control
-        - matrix_outer_bottom
-        - matrix_pinky_bottom
-        - matrix_ring_bottom
-        - matrix_middle_bottom
-        - matrix_index_bottom
-        - matrix_inner_bottom
-        - matrix_outer_home
-        - matrix_pinky_home
-        - matrix_ring_home
-        - matrix_middle_home
-        - matrix_index_home
-        - matrix_inner_home
-        - matrix_outer_top
-        - matrix_pinky_top
-        - matrix_ring_top
-        - matrix_middle_top
-        - matrix_index_top
-        - matrix_inner_top
-        - matrix_outer_num
-        - matrix_pinky_num
-        - matrix_ring_num
-        - matrix_middle_num
-        - matrix_index_num
-        - matrix_inner_num
-        - thumb_in
-        - thumb_mid
-        - thumb_out 
+      where: /^matrix_.*/ 
       size: [kx-0.5,ky-0.5]
   right_keys:
     - what: rectangle
-      where:
-        - mirror_matrix_outer_control
-        - mirror_matrix_pinky_control
-        - mirror_matrix_ring_control
-        - mirror_matrix_middle_control
-        - mirror_matrix_index_control
-        - mirror_matrix_inner_control
-        - mirror_matrix_outer_bottom
-        - mirror_matrix_pinky_bottom
-        - mirror_matrix_ring_bottom
-        - mirror_matrix_middle_bottom
-        - mirror_matrix_index_bottom
-        - mirror_matrix_inner_bottom
-        - mirror_matrix_outer_home
-        - mirror_matrix_pinky_home
-        - mirror_matrix_ring_home
-        - mirror_matrix_middle_home
-        - mirror_matrix_index_home
-        - mirror_matrix_inner_home
-        - mirror_matrix_outer_top
-        - mirror_matrix_pinky_top
-        - mirror_matrix_ring_top
-        - mirror_matrix_middle_top
-        - mirror_matrix_index_top
-        - mirror_matrix_inner_top
-        - mirror_matrix_outer_num
-        - mirror_matrix_pinky_num
-        - mirror_matrix_ring_num
-        - mirror_matrix_middle_num
-        - mirror_matrix_index_num
-        - mirror_matrix_inner_num
-        - mirror_thumb_in
-        - mirror_thumb_mid
-        - mirror_thumb_out
+      where: /^mirror_.*/
       size: [kx-0.5,ky-0.5]
   left_board:
     - what: polygon
@@ -325,7 +259,7 @@ outlines:
     - what: circle
       radius: 2.2 
       where: 
-        ref: thumb_in
+        ref: matrix_thumb_in
         shift: [2,-14] 
   left_mounting_hole-bottom_right:
     - what: circle
@@ -361,7 +295,7 @@ outlines:
     - what: circle
       radius: 2.2 
       where: 
-        ref: mirror_thumb_in
+        ref: mirror_matrix_thumb_in
         shift: [2,-14] 
   right_mounting_hole-bottom_right:
     - what: circle
@@ -397,7 +331,7 @@ outlines:
     - what: circle
       radius: 4
       where: 
-        ref: thumb_in
+        ref: matrix_thumb_in
         shift: [2,-14] 
   left_stilts-bottom_right:
     - what: circle
@@ -433,7 +367,7 @@ outlines:
     - what: circle
       radius: 4
       where: 
-        ref: mirror_thumb_in
+        ref: mirror_matrix_thumb_in
         shift: [2,-14] 
   right_stilts-bottom_right:
     - what: circle
@@ -541,40 +475,7 @@ pcbs:
     footprints:
       mx_hotswap:
         what: mx
-        where: 
-        - matrix_outer_control
-        - matrix_pinky_control
-        - matrix_ring_control
-        - matrix_middle_control
-        - matrix_index_control
-        - matrix_inner_control
-        - matrix_outer_bottom
-        - matrix_pinky_bottom
-        - matrix_ring_bottom
-        - matrix_middle_bottom
-        - matrix_index_bottom
-        - matrix_inner_bottom
-        - matrix_outer_home
-        - matrix_pinky_home
-        - matrix_ring_home
-        - matrix_middle_home
-        - matrix_index_home
-        - matrix_inner_home
-        - matrix_outer_top
-        - matrix_pinky_top
-        - matrix_ring_top
-        - matrix_middle_top
-        - matrix_index_top
-        - matrix_inner_top
-        - matrix_outer_num
-        - matrix_pinky_num
-        - matrix_ring_num
-        - matrix_middle_num
-        - matrix_index_num
-        - matrix_inner_num
-        - thumb_in
-        - thumb_mid
-        - thumb_out
+        where: /^matrix_.*/
         params:
           keycaps: true
           reverse: false
@@ -583,62 +484,29 @@ pcbs:
           to: "{{colrow}}"
       diode:
         what: diode
-        where:
-        - matrix_outer_control
-        - matrix_pinky_control
-        - matrix_ring_control
-        - matrix_middle_control
-        - matrix_index_control
-        - matrix_inner_control
-        - matrix_outer_bottom
-        - matrix_pinky_bottom
-        - matrix_ring_bottom
-        - matrix_middle_bottom
-        - matrix_index_bottom
-        - matrix_inner_bottom
-        - matrix_outer_home
-        - matrix_pinky_home
-        - matrix_ring_home
-        - matrix_middle_home
-        - matrix_index_home
-        - matrix_inner_home
-        - matrix_outer_top
-        - matrix_pinky_top
-        - matrix_ring_top
-        - matrix_middle_top
-        - matrix_index_top
-        - matrix_inner_top
-        - matrix_outer_num
-        - matrix_pinky_num
-        - matrix_ring_num
-        - matrix_middle_num
-        - matrix_index_num
-        - matrix_inner_num
-        - thumb_in
-        - thumb_mid
-        - thumb_out
+        where: /^matrix_.*/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
           shift: [0, -5]
       nicenano:
-        what: Nice_Nano
+        what: nice_nano
         params: {
           designator: 'MCU',
           orientation: 'up',
-          P006: col_1,
-          P008: col_2,
-          P017: col_3,
-          P020: col_4,
-          P022: col_5,
-          P024: col_6,
-          P100: row_1,
-          P011: row_2,
-          P104: row_3,
-          P106: row_4,
-          P009: row_5,
-          P111: thumb_1
+          P022: col_1,
+          P024: col_2,
+          P011: col_3,
+          P100: col_4,
+          P104: col_5,
+          P106: col_6,
+          P009: row_1,
+          P010: row_2,
+          P111: row_3,
+          P113: row_4,
+          P115: row_5,
+          P002: thumb_1
         }
         where:
           ref: matrix_inner_num
@@ -650,6 +518,23 @@ pcbs:
           ref: matrix_inner_num
           shift: [23,-2]
           rotate: 0
+        params: {
+          CS: P006,
+          SCK: P020,
+          MOSI: P017,
+          VCC: VCC,
+          GND: GND
+          }
+      jstph:
+        what: jstph
+        where:
+          ref: matrix_inner_home
+          shift: [10, 1]
+          rotate: 90
+        params:
+            side: B
+            pos: pos
+            neg: GND 
       battery_switch:
         what: slider
         where:
@@ -671,7 +556,7 @@ pcbs:
           shift: [2, 6.0]
           rotate: 0
       front_text: &text
-        what: Text
+        what: text
         where: &textWhere
             ref: matrix_inner_home
             shift: [21,-12.8]
@@ -682,16 +567,6 @@ pcbs:
             h_size: 6
             v_size: 6
             thickness: 1.5
-      jstph:
-        what: jstph
-        where:
-          ref: matrix_inner_home
-          shift: [10, 1]
-          rotate: 90
-        params:
-            side: B
-            pos: pos
-            neg: GND 
   right:
     outlines:
       main:
@@ -699,104 +574,38 @@ pcbs:
     footprints:
       mx_hotswap:
         what: mx
-        where:
-        - mirror_matrix_outer_control
-        - mirror_matrix_pinky_control
-        - mirror_matrix_ring_control
-        - mirror_matrix_middle_control
-        - mirror_matrix_index_control
-        - mirror_matrix_inner_control
-        - mirror_matrix_outer_bottom
-        - mirror_matrix_pinky_bottom
-        - mirror_matrix_ring_bottom
-        - mirror_matrix_middle_bottom
-        - mirror_matrix_index_bottom
-        - mirror_matrix_inner_bottom
-        - mirror_matrix_outer_home
-        - mirror_matrix_pinky_home
-        - mirror_matrix_ring_home
-        - mirror_matrix_middle_home
-        - mirror_matrix_index_home
-        - mirror_matrix_inner_home
-        - mirror_matrix_outer_top
-        - mirror_matrix_pinky_top
-        - mirror_matrix_ring_top
-        - mirror_matrix_middle_top
-        - mirror_matrix_index_top
-        - mirror_matrix_inner_top
-        - mirror_matrix_outer_num
-        - mirror_matrix_pinky_num
-        - mirror_matrix_ring_num
-        - mirror_matrix_middle_num
-        - mirror_matrix_index_num
-        - mirror_matrix_inner_num
-        - mirror_thumb_in
-        - mirror_thumb_mid
-        - mirror_thumb_out
+        where: /^mirror_.*/
         params:
           keycaps: true
           reverse: false
           hotswap: true
-          from: "{{mirror_column_net}}"
-          to: "{{mirror_colrow}}"
+          from: "{{column_net}}"
+          to: "{{colrow}}"
       diode:
         what: diode
-        where:
-        - mirror_matrix_outer_control
-        - mirror_matrix_pinky_control
-        - mirror_matrix_ring_control
-        - mirror_matrix_middle_control
-        - mirror_matrix_index_control
-        - mirror_matrix_inner_control
-        - mirror_matrix_outer_bottom
-        - mirror_matrix_pinky_bottom
-        - mirror_matrix_ring_bottom
-        - mirror_matrix_middle_bottom
-        - mirror_matrix_index_bottom
-        - mirror_matrix_inner_bottom
-        - mirror_matrix_outer_home
-        - mirror_matrix_pinky_home
-        - mirror_matrix_ring_home
-        - mirror_matrix_middle_home
-        - mirror_matrix_index_home
-        - mirror_matrix_inner_home
-        - mirror_matrix_outer_top
-        - mirror_matrix_pinky_top
-        - mirror_matrix_ring_top
-        - mirror_matrix_middle_top
-        - mirror_matrix_index_top
-        - mirror_matrix_inner_top
-        - mirror_matrix_outer_num
-        - mirror_matrix_pinky_num
-        - mirror_matrix_ring_num
-        - mirror_matrix_middle_num
-        - mirror_matrix_index_num
-        - mirror_matrix_inner_num
-        - mirror_thumb_in
-        - mirror_thumb_mid
-        - mirror_thumb_out
+        where: /^mirror_.*/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
           shift: [0, -5]
       nicenano:
-        what: Nice_Nano
+        what: nice_nano
         params: {
           designator: 'MCU',
           orientation: 'up',
-          P111: col_1,
-          P113: col_2,
-          P115: col_3,
-          P002: col_4,
-          P029: col_5,
-          P031: col_6,
-          P010: row_1,
-          P009: row_2,
-          P106: row_3,
-          P104: row_4,
-          P011: row_5,
-          P100: thumb_1
+          P002: col_1,
+          P115: col_2,
+          P113: col_3,
+          P111: col_4,
+          P010: col_5,
+          P009: col_6,
+          P106: row_1,
+          P104: row_2,
+          P011: row_3,
+          P100: row_4,
+          P024: row_5,
+          P022: thumb_1
         }
         where:
           ref: mirror_matrix_inner_num
@@ -808,6 +617,23 @@ pcbs:
           ref: mirror_matrix_inner_num
           shift: [23,-2]
           rotate: 0
+        params: {
+          CS: P006,
+          SCK: P020,
+          MOSI: P017,
+          VCC: VCC,
+          GND: GND
+          }
+      jstph:
+        what: jstph
+        where:
+          ref: mirror_matrix_inner_home
+          shift: [10, 1]
+          rotate: 90
+        params:
+            side: B
+            pos: pos
+            neg: GND 
       battery_switch:
         what: slider
         where:
@@ -829,7 +655,7 @@ pcbs:
           shift: [2, 6.0]
           rotate: 0
       front_text: &text
-        what: Text
+        what: text
         where: &textWhere
             ref: mirror_matrix_inner_home
             shift: [21,-12.8]
@@ -840,16 +666,6 @@ pcbs:
             h_size: 6
             v_size: 6
             thickness: 1.5
-      jstph:
-        what: jstph
-        where:
-          ref: mirror_matrix_inner_home
-          shift: [10, 1]
-          rotate: 90
-        params:
-            side: B
-            pos: pos
-            neg: GND 
 cases:
   left_bottom:
     - name: left_xlboard
