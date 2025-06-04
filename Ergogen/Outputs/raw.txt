@@ -1,0 +1,723 @@
+units:
+  kx: u
+  ky: u
+  px: kx + 2
+  py: ky + 2
+  dkx: kx + 8
+  dky: ky + 8
+points:
+  zones:
+    matrix:
+      columns:
+        outer:
+          key:
+            column_net: col_6
+        pinky:
+          key:
+            column_net: col_5
+        ring:
+          key:
+            stagger: 0.66U
+            column_net: col_4
+        middle:
+          key:
+            stagger: 0.25U
+            column_net: col_3
+        index:
+          key:
+            stagger: -0.25U
+            column_net: col_2
+        inner:
+          key:
+            stagger: -0.15U
+            column_net: col_1
+      rows:
+        control:
+          padding: U
+          row_net: row_5
+        bottom:
+          padding: U
+          row_net: row_4
+        home:
+          padding: U
+          row_net: row_3
+        top:
+          padding: U 
+          row_net: row_2
+        num:
+          padding: U 
+          row_net: row_1
+      anchor: 
+        shift: [27,-120]
+    thumb:
+      anchor:
+        ref: matrix_index_bottom
+        shift: [-0.1U, -2.2U]
+        rotate: -10
+      columns:
+        in:
+          key:
+            name: matrix_thumb_in 
+            column_net: col_3
+            row_net: thumb_1
+        mid:
+          key:
+            spread: U
+            splay: -15
+            origin: [-0.5U, -0.5U]
+            name: matrix_thumb_mid
+            column_net: col_2
+            row_net: thumb_1
+        out:
+          key:
+            spread: U
+            splay: -15
+            origin: [-0.5U, -0.5U]
+            column_net: col_1
+            row_net: thumb_1         
+            name: matrix_thumb_out
+  mirror: &mirror
+    ref: matrix_inner_num
+    distance: 83
+    resist: true  
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [px, py]
+  keys_all:
+    - what: rectangle
+      where: true
+      size: [kx-0.5,ky-0.5]
+  left_keys:
+    - what: rectangle
+      where: /^matrix_.*/ 
+      size: [kx-0.5,ky-0.5]
+  right_keys:
+    - what: rectangle
+      where: /^mirror_.*/
+      size: [kx-0.5,ky-0.5]
+  left_board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_outer_control
+          shift: [-14,-14]
+        - ref: matrix_outer_control
+          shift: [60,-14]
+        - ref: matrix_outer_control
+          shift: [60,-30]
+        - ref: matrix_outer_control
+          shift: [90,-30]
+        - ref: matrix_outer_control
+          shift: [107,-45]
+        - ref: matrix_outer_control
+          shift: [130,-45]
+        - ref: matrix_outer_control
+          shift: [130,107]
+        - ref: matrix_outer_control
+          shift: [23,107]
+        - ref: matrix_outer_control 
+          shift: [23,90]
+        - ref: matrix_outer_control
+          shift: [-14,90]
+        - ref: matrix_outer_control
+          shift: [-14,-14]
+      fillet: 7.9
+  right_board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: mirror_matrix_outer_control
+          shift: [-14,-14]
+        - ref: mirror_matrix_outer_control
+          shift: [60,-14]
+        - ref: mirror_matrix_outer_control
+          shift: [60,-30]
+        - ref: mirror_matrix_outer_control
+          shift: [90,-30]
+        - ref: mirror_matrix_outer_control
+          shift: [107,-45]
+        - ref: mirror_matrix_outer_control
+          shift: [130,-45]
+        - ref: mirror_matrix_outer_control
+          shift: [130,107]
+        - ref: mirror_matrix_outer_control
+          shift: [23,107]
+        - ref: mirror_matrix_outer_control 
+          shift: [23,90]
+        - ref: mirror_matrix_outer_control
+          shift: [-14,90]
+        - ref: mirror_matrix_outer_control
+          shift: [-14,-14]
+      fillet: 7.9
+  left_xlboard:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_outer_control
+          shift: [-19,-19]
+        - ref: matrix_outer_control
+          shift: [55,-19]
+        - ref: matrix_outer_control
+          shift: [55,-35]
+        - ref: matrix_outer_control
+          shift: [85,-35]
+        - ref: matrix_outer_control
+          shift: [102,-50]
+        - ref: matrix_outer_control
+          shift: [135,-50]
+        - ref: matrix_outer_control
+          shift: [135,112]
+        - ref: matrix_outer_control
+          shift: [18,112]
+        - ref: matrix_outer_control 
+          shift: [18,95]
+        - ref: matrix_outer_control
+          shift: [-19,95]
+        - ref: matrix_outer_control
+          shift: [-19,-19]
+      fillet: 7.9
+  right_xlboard:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: mirror_matrix_outer_control
+          shift: [-19,-19]
+        - ref: mirror_matrix_outer_control
+          shift: [55,-19]
+        - ref: mirror_matrix_outer_control
+          shift: [55,-35]
+        - ref: mirror_matrix_outer_control
+          shift: [85,-35]
+        - ref: mirror_matrix_outer_control
+          shift: [102,-50]
+        - ref: mirror_matrix_outer_control
+          shift: [135,-50]
+        - ref: mirror_matrix_outer_control
+          shift: [135,112]
+        - ref: mirror_matrix_outer_control
+          shift: [18,112]
+        - ref: mirror_matrix_outer_control 
+          shift: [18,95]
+        - ref: mirror_matrix_outer_control
+          shift: [-19,95]
+        - ref: mirror_matrix_outer_control
+          shift: [-19,-19]
+      fillet: 7.9
+  left_niceview_template: 
+    - what: polygon
+      points:
+        - ref: matrix_outer_num
+          shift: [108,28]
+        - ref: matrix_outer_num
+          shift: [126,28]
+        - ref: matrix_outer_num
+          shift: [126,-7]
+        - ref: matrix_outer_num
+          shift: [108,-7]
+        - ref: matrix_outer_num
+          shift: [108,28] 
+  right_niceview_template: 
+    - what: polygon
+      points:
+        - ref: mirror_matrix_outer_num
+          shift: [108,28]
+        - ref: mirror_matrix_outer_num
+          shift: [126,28]
+        - ref: mirror_matrix_outer_num
+          shift: [126,-7]
+        - ref: mirror_matrix_outer_num
+          shift: [108,-7]
+        - ref: mirror_matrix_outer_num
+          shift: [108,28] 
+  left_mounting_hole-top_left:
+    - what: circle
+      radius: 2.2 
+      where: 
+        ref: matrix_pinky_num
+        shift: [5,13]
+  left_mounting_hole-top_middle:
+    - what: circle
+      radius: 2.2 
+      where: 
+        ref: matrix_inner_num
+        shift: [0,15]
+  left_mounting_hole-top_right:
+    - what: circle
+      radius: 2.2 
+      where: 
+        ref: matrix_inner_home
+        shift: [21.5,9.5]
+  left_mounting_hole-bottom_left:
+    - what: circle
+      radius: 2.2 
+      where:
+        ref: matrix_ring_control
+        shift: [0,-18]
+  left_mounting_hole-bottom_middle:
+    - what: circle
+      radius: 2.2 
+      where: 
+        ref: matrix_thumb_in
+        shift: [2,-14] 
+  left_mounting_hole-bottom_right:
+    - what: circle
+      radius: 2.2 
+      where: 
+        ref: matrix_inner_control
+        shift: [21.5,3] 
+  right_mounting_hole-top_left:
+    - what: circle
+      radius: 2.2 
+      where: 
+        ref: mirror_matrix_pinky_num
+        shift: [5,13]
+  right_mounting_hole-top_middle:
+    - what: circle
+      radius: 2.2 
+      where: 
+        ref: mirror_matrix_inner_num
+        shift: [0,15]
+  right_mounting_hole-top_right:
+    - what: circle
+      radius: 2.2 
+      where: 
+        ref: mirror_matrix_inner_home
+        shift: [21.5,7]
+  right_mounting_hole-bottom_left:
+    - what: circle
+      radius: 2.2 
+      where:
+        ref: mirror_matrix_ring_control
+        shift: [0,-18]
+  right_mounting_hole-bottom_middle:
+    - what: circle
+      radius: 2.2 
+      where: 
+        ref: mirror_matrix_thumb_in
+        shift: [2,-14] 
+  right_mounting_hole-bottom_right:
+    - what: circle
+      radius: 2.2 
+      where: 
+        ref: mirror_matrix_inner_control
+        shift: [21.5,3] 
+  left_stilts-top_left:
+    - what: circle
+      radius: 3.7
+      where: 
+        ref: matrix_pinky_num
+        shift: [5,13]
+  left_stilts-top_middle:
+    - what: circle
+      radius: 4
+      where: 
+        ref: matrix_inner_num
+        shift: [0,15]
+  left_stilts-top_right:
+    - what: circle
+      radius: 4
+      where: 
+        ref: matrix_inner_home
+        shift: [21.5,9.5]
+  left_stilts-bottom_left:
+    - what: circle
+      radius: 4
+      where:
+        ref: matrix_ring_control
+        shift: [0,-18]
+  left_stilts-bottom_middle:
+    - what: circle
+      radius: 4
+      where: 
+        ref: matrix_thumb_in
+        shift: [2,-14] 
+  left_stilts-bottom_right:
+    - what: circle
+      radius: 4
+      where: 
+        ref: matrix_inner_control
+        shift: [21.5,3] 
+  right_stilts-top_left:
+    - what: circle
+      radius: 3.7
+      where: 
+        ref: mirror_matrix_pinky_num
+        shift: [5,13]
+  right_stilts-top_middle:
+    - what: circle
+      radius: 4
+      where: 
+        ref: mirror_matrix_inner_num
+        shift: [0,15]
+  right_stilts-top_right:
+    - what: circle
+      radius: 4
+      where: 
+        ref: mirror_matrix_inner_home
+        shift: [21.5,7]
+  right_stilts-bottom_left:
+    - what: circle
+      radius: 4
+      where:
+        ref: mirror_matrix_ring_control
+        shift: [0,-18]
+  right_stilts-bottom_middle:
+    - what: circle
+      radius: 4
+      where: 
+        ref: mirror_matrix_thumb_in
+        shift: [2,-14] 
+  right_stilts-bottom_right:
+    - what: circle
+      radius: 4
+      where: 
+        ref: mirror_matrix_inner_control
+        shift: [21.5,3] 
+  left_mounting_holes:
+    - name: left_mounting_hole-top_left
+    - operation: add
+      name: left_mounting_hole-top_middle
+    - operation: add
+      name: left_mounting_hole-top_right
+    - operation: add
+      name: left_mounting_hole-bottom_left
+    - operation: add
+      name: left_mounting_hole-bottom_middle
+    - operation: add
+      name: left_mounting_hole-bottom_right
+  right_mounting_holes:
+    - name: right_mounting_hole-top_left
+    - operation: add
+      name: right_mounting_hole-top_middle
+    - operation: add
+      name: right_mounting_hole-top_right
+    - operation: add
+      name: right_mounting_hole-bottom_left
+    - operation: add
+      name: right_mounting_hole-bottom_middle
+    - operation: add
+      name: right_mounting_hole-bottom_right
+  left_stilts:
+    - name: left_stilts-top_left
+    - operation: add
+      name: left_stilts-top_middle
+    - operation: add
+      name: left_stilts-top_right
+    - operation: add
+      name: left_stilts-bottom_left
+    - operation: add
+      name: left_stilts-bottom_middle
+    - operation: add
+      name: left_stilts-bottom_right
+  right_stilts:
+    - name: right_stilts-top_left
+    - operation: add
+      name: right_stilts-top_middle
+    - operation: add
+      name: right_stilts-top_right
+    - operation: add
+      name: right_stilts-bottom_left
+    - operation: add
+      name: right_stilts-bottom_middle
+    - operation: add
+      name: right_stilts-bottom_right
+  left_pcb:
+    - name: left_board
+    - operation: subtract
+      name: left_mounting_holes
+  right_pcb:
+    - name: right_board
+    - operation: subtract
+      name: right_mounting_holes
+  left_stilts_w/holes:
+    - name: left_stilts
+    - operation: subtract
+      name: left_mounting_holes
+  right_stlits_w/holes:
+    - name: right_stilts
+    - operation: subtract
+      name: right_mounting_holes
+  left_combo:
+    - name: left_xlboard
+    - operation: subtract 
+      name: left_board
+    - operation: add
+      name: left_stilts
+    - operation: subtract
+      name: left_mounting_holes 
+    - operation: add
+      name: left_keys 
+    - operation: add
+      name: left_niceview_template
+  right_combo:
+    - name: right_xlboard
+    - operation: subtract 
+      name: right_board
+    - operation: add
+      name: right_stilts
+    - operation: subtract
+      name: right_mounting_holes 
+    - operation: add
+      name: right_keys
+    - operation: add
+      name: right_niceview_template
+  both_combo: 
+    - name: left_combo
+    - operation: add 
+      name: right_combo
+pcbs:
+  left:
+    outlines:
+      main:
+        outline: left_pcb
+    footprints:
+      mx_hotswap:
+        what: mx
+        where: /^matrix_.*/
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: /^matrix_.*/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      nicenano:
+        what: nice_nano
+        params: {
+          designator: 'MCU',
+          orientation: 'up',
+          P022: col_1,
+          P024: col_2,
+          P011: col_3,
+          P100: col_4,
+          P104: col_5,
+          P106: col_6,
+          P009: row_1,
+          P010: row_2,
+          P111: row_3,
+          P113: row_4,
+          P115: row_5,
+          P002: thumb_1
+        }
+        where:
+          ref: matrix_inner_num
+          shift: [23,4]
+          rotate: 270
+      niceview:
+        what: ceoloide/display_nice_view
+        where: 
+          ref: matrix_inner_num
+          shift: [23,-2]
+          rotate: 0
+        params: {
+          CS: P006,
+          SCK: P020,
+          MOSI: P017,
+          VCC: VCC,
+          GND: GND
+          }
+      jstph:
+        what: jstph
+        where:
+          ref: matrix_inner_home
+          shift: [10, 1]
+          rotate: 90
+        params:
+            side: B
+            pos: pos
+            neg: GND 
+      battery_switch:
+        what: slider
+        where:
+            ref: matrix_inner_num
+            shift: [0, 6.0]
+            rotate: 0
+        params:
+            side: F
+            from: pos
+            to: RAW
+      reset:
+        what: EVQPUC
+        params: 
+          side: F
+          from: GND
+          to: RST 
+        where:
+          ref: matrix_inner_num
+          shift: [2, 6.0]
+          rotate: 0
+      front_text: &text
+        what: text
+        where: &textWhere
+            ref: matrix_inner_home
+            shift: [21,-12.8]
+            rotate: 270
+        params: &textParams
+            text: LEGEND
+            justify: centre 
+            h_size: 6
+            v_size: 6
+            thickness: 1.5
+  right:
+    outlines:
+      main:
+        outline: right_pcb
+    footprints:
+      mx_hotswap:
+        what: mx
+        where: /^mirror_.*/
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: /^mirror_.*/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      nicenano:
+        what: nice_nano
+        params: {
+          designator: 'MCU',
+          orientation: 'up',
+          P002: col_1,
+          P115: col_2,
+          P113: col_3,
+          P111: col_4,
+          P010: col_5,
+          P009: col_6,
+          P106: row_1,
+          P104: row_2,
+          P011: row_3,
+          P100: row_4,
+          P024: row_5,
+          P022: thumb_1
+        }
+        where:
+          ref: mirror_matrix_inner_num
+          shift: [23,4]
+          rotate: 270
+      niceview:
+        what: ceoloide/display_nice_view
+        where: 
+          ref: mirror_matrix_inner_num
+          shift: [23,-2]
+          rotate: 0
+        params: {
+          CS: P006,
+          SCK: P020,
+          MOSI: P017,
+          VCC: VCC,
+          GND: GND
+          }
+      jstph:
+        what: jstph
+        where:
+          ref: mirror_matrix_inner_home
+          shift: [10, 1]
+          rotate: 90
+        params:
+            side: B
+            pos: pos
+            neg: GND 
+      battery_switch:
+        what: slider
+        where:
+            ref: mirror_matrix_inner_num
+            shift: [0, 6.0]
+            rotate: 0
+        params:
+            side: F
+            from: pos
+            to: RAW
+      reset:
+        what: EVQPUC
+        params: 
+          side: F
+          from: GND
+          to: RST 
+        where:
+          ref: mirror_matrix_inner_num
+          shift: [2, 6.0]
+          rotate: 0
+      front_text: &text
+        what: text
+        where: &textWhere
+            ref: mirror_matrix_inner_home
+            shift: [21,-12.8]
+            rotate: 90
+        params: &textParams
+            text: LEGEND
+            justify: centre 
+            h_size: 6
+            v_size: 6
+            thickness: 1.5
+cases:
+  left_bottom:
+    - name: left_xlboard
+      extrude: 1
+  left_pcb:
+    - name: left_pcb
+      extrude: 1
+  left_walls: 
+    - name: left_xlboard
+    - operation: subtract
+      name: left_board
+      extrude: 1
+  left_stilts+holes:
+    - name: left_stilts
+    - operation: subtract
+      name: left_mounting_holes
+  left_top_case:
+    - name: left_xlboard
+    - operation: subtract
+      name: left_keys 
+      extrude: 1
+  left_bottom_case:
+    - what: case
+      name: left_bottom
+      operation: add
+    - what: case
+      name: left_walls
+      operation: add
+  right_bottom:
+    - name: right_xlboard
+      extrude: 1
+  right_pcb:
+    - name: right_pcb
+      extrude: 1
+  right_walls: 
+    - name: right_xlboard
+    - operation: subtract
+      name: right_board
+      extrude: 1
+  right_stilts+holes:
+    - name: right_stilts
+    - operation: subtract
+      name: right_mounting_holes
+  right_top_case:
+    - name: right_xlboard
+    - operation: subtract
+      name: right_keys 
+      extrude: 1
+  right_bottom_case:
+    - what: case
+      name: right_bottom
+      operation: add
+    - what: case
+      name: right_walls
+      operation: add
