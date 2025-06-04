@@ -19,6 +19,5 @@ I would recommened this to people who are going for simpler designs.
 Unlike most people I used outlines and combos for the mounting points intead of footprints in pcbs.  
 I did this so i could visually see them in ergogen to stop the amount of times i had to switch between Ergogen and KiCad.  
 It also has stilts for the pcb to sit on so i have room for the battery and maybe have foam or something to provide a bit more support. 
-Another thing is that I have not made the nice!nano reversed on both sides as this complicated a lot of things for and since I am leaving space under anyway on one side the nice!nano will be on the bottom.
 
 # THIS IS NOT FINISHED DO NOT USE YET PLEASE
